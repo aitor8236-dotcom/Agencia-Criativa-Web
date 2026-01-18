@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agência Criativa Web - Design Digital e Desenvolvimento Web de Excelência">
+    <title>Agência Criativa Web | Design Digital Inovador</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Agência<span class="destaque">Criativa</span></h1>
+            </div>
+            <nav class="nav">
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Home / Banner -->
+    <section id="home" class="home">
+        <div class="home-content">
+            <h2 class="home-titulo">Transformamos Ideias em Experiências Digitais</h2>
+            <p class="home-subtitulo">Somos especialistas em criar soluções criativas que conectam sua marca ao público</p>
+            <a href="#contato" class="btn-primario">Fale Conosco</a>
+        </div>
+        <div class="home-overlay"></div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2 class="secao-titulo">Sobre Nós</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <h3>Quem Somos</h3>
+                    <p>A <strong>Agência Criativa Web</strong> é uma agência de design digital comprometida em entregar soluções inovadoras e de alta qualidade. Com uma equipe de profissionais experientes e apaixonados, trabalhamos para transformar a presença digital dos nossos clientes.</p>
+                    <p>Nossos valores são baseados em <strong>criatividade</strong>, <strong>inovação</strong>, <strong>qualidade</strong> e <strong>compromisso</strong> com os resultados. Acreditamos que cada projeto é único e merece atenção especial para alcançar objetivos excepcionais.</p>
+                </div>
+                <div class="sobre-imagem">
+                    <img 
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" 
+                        srcset="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop 400w,
+                                https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop 800w,
+                                https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=900&fit=crop 1200w"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        alt="Equipe colaborando em projeto digital"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <h2 class="secao-titulo">Nossos Serviços</h2>
+            <p class="secao-subtitulo">Oferecemos soluções completas para elevar sua presença digital</p>
+            <div class="servicos-grid">
+                <article class="servico-card">
+                    <div class="servico-icon">🎨</div>
+                    <h3>Design Gráfico</h3>
+                    <p>Criamos identidades visuais marcantes que comunicam a essência da sua marca com criatividade e profissionalismo.</p>
+                </article>
+                <article class="servico-card">
+                    <div class="servico-icon">💻</div>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Desenvolvemos sites e aplicações web responsivas, rápidas e otimizadas para proporcionar a melhor experiência ao usuário.</p>
+                </article>
+                <article class="servico-card">
+                    <div class="servico-icon">🚀</div>
+                    <h3>Branding</h3>
+                    <p>Construímos marcas fortes e memoráveis através de estratégias consistentes e criativas que geram conexão emocional.</p>
+                </article>
+                <article class="servico-card">
+                    <div class="servico-icon">📱</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Criamos interfaces intuitivas e experiências de usuário envolventes que maximizam conversões e satisfação.</p>
+                </article>
+                <article class="servico-card">
+                    <div class="servico-icon">📈</div>
+                    <h3>Marketing Digital</h3>
+                    <p>Desenvolvemos estratégias digitais eficazes para aumentar sua visibilidade e engajamento com o público-alvo.</p>
+                </article>
+                <article class="servico-card">
+                    <div class="servico-icon">🎬</div>
+                    <h3>Motion Design</h3>
+                    <p>Produzimos animações e vídeos impactantes que contam histórias e capturam a atenção do seu público.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section id="depoimentos" class="depoimentos">
+        <div class="container">
+            <h2 class="secao-titulo">O Que Dizem Nossos Clientes</h2>
+            <div class="depoimentos-container">
+                <article class="depoimento-card">
+                    <div class="depoimento-aspas">"</div>
+                    <p class="depoimento-texto">A Agência Criativa Web transformou completamente nossa presença digital. O site ficou moderno, rápido e nossos clientes adoraram a nova experiência!</p>
+                    <div class="depoimento-autor">
+                        <img 
+                            src="https://i.pravatar.cc/150?img=12" 
+                            srcset="https://i.pravatar.cc/150?img=12 1x, https://i.pravatar.cc/300?img=12 2x"
+                            alt="Foto de Maria Silva"
+                        >
+                        <div class="autor-info">
+                            <h4>Maria Silva</h4>
+                            <p>CEO - TechStart Brasil</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="depoimento-card">
+                    <div class="depoimento-aspas">"</div>
+                    <p class="depoimento-texto">Profissionais extremamente competentes e criativos. Entenderam perfeitamente nossa visão e entregaram um trabalho excepcional dentro do prazo.</p>
+                    <div class="depoimento-autor">
+                        <img 
+                            src="https://i.pravatar.cc/150?img=33" 
+                            srcset="https://i.pravatar.cc/150?img=33 1x, https://i.pravatar.cc/300?img=33 2x"
+                            alt="Foto de João Santos"
+                        >
+                        <div class="autor-info">
+                            <h4>João Santos</h4>
+                            <p>Diretor - Inovare Soluções</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="depoimento-card">
+                    <div class="depoimento-aspas">"</div>
+                    <p class="depoimento-texto">O atendimento é impecável e os resultados superaram nossas expectativas. Recomendo a Agência Criativa Web para qualquer empresa que busca excelência.</p>
+                    <div class="depoimento-autor">
+                        <img 
+                            src="https://i.pravatar.cc/150?img=47" 
+                            srcset="https://i.pravatar.cc/150?img=47 1x, https://i.pravatar.cc/300?img=47 2x"
+                            alt="Foto de Ana Costa"
+                        >
+                        <div class="autor-info">
+                            <h4>Ana Costa</h4>
+                            <p>Fundadora - Boutique Elegância</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2 class="secao-titulo">Entre em Contato</h2>
+            <p class="secao-subtitulo">Vamos transformar suas ideias em realidade digital</p>
+            <div class="contato-content">
+                <div class="contato-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-texto">
+                            <h3>Endereço</h3>
+                            <p>Rua das Termas, 456 - Centro<br>Caldas Novas - GO, 75690-000</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-texto">
+                            <h3>Telefone</h3>
+                            <p>(64) 98765-4321<br>(64) 3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-texto">
+                            <h3>E-mail</h3>
+                            <p>contato@agenciacriativa.com.br<br>projetos@agenciacriativa.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contato-form" id="contatoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone (opcional)</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte-nos sobre seu projeto..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primario">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Agência Criativa Web. Todos os direitos reservados.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle para mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navList = document.getElementById('navList');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('.nav-list a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Formulário de contato (exemplo básico)
+        const form = document.getElementById('contatoForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Obrigado pela mensagem! Entraremos em contato em breve.');
+            form.reset();
+        });
+
+        // Header fixo ao rolar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
