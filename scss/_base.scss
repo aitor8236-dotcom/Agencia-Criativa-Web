@@ -1,0 +1,125 @@
+// ================================================================
+// BASE - RESET E ESTILOS GLOBAIS
+// ================================================================
+
+@use 'variaveis' as *;
+
+// -------------------- Reset --------------------
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// -------------------- HTML & Body --------------------
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-base;
+    color: $color-text-primary;
+    background-color: $color-bg-primary;
+}
+
+// -------------------- Imagens --------------------
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// -------------------- Links --------------------
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// -------------------- Listas --------------------
+ul, ol {
+    list-style: none;
+}
+
+// -------------------- Buttons --------------------
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+// -------------------- Container --------------------
+.container {
+    width: $container-width;
+    max-width: $container-max-width;
+    margin-inline: auto;
+    padding-inline: $spacing-sm;
+}
+
+// -------------------- Classes Utilitárias --------------------
+.section {
+    padding: $spacing-xl 0;
+    
+    &--alt-bg {
+        background-color: $color-bg-secondary;
+    }
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin-bottom: $spacing-sm;
+    color: $color-text-primary;
+    position: relative;
+    
+    &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, $color-primary, $color-accent);
+        margin: 1rem auto 0;
+        border-radius: 2px;
+    }
+    
+    &--light {
+        color: $color-bg-primary;
+        
+        &::after {
+            background: $color-bg-primary;
+        }
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: $color-text-secondary;
+    margin-bottom: $spacing-md;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, $color-primary, $color-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// -------------------- Acessibilidade --------------------
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

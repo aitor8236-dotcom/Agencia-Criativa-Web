@@ -1,0 +1,26 @@
+{
+  "name": "agencia-criativa-web",
+  "version": "2.0.0",
+  "description": "Website responsivo da Agência Criativa Web com SASS",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/estilos.scss css/estilos.css",
+    "sass:watch": "sass --watch scss:css",
+    "sass:build": "sass scss/estilos.scss css/estilos.css --style=compressed",
+    "dev": "sass --watch scss:css --style=expanded",
+    "build": "sass scss/estilos.scss css/estilos.css --style=compressed --no-source-map"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "responsive",
+    "bem",
+    "web-design"
+  ],
+  "author": "Agência Criativa Web",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

@@ -1,0 +1,352 @@
+// ================================================================
+// LAYOUT - HEADER, HERO, SEÇÕES, FOOTER
+// ================================================================
+
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// ================================================================
+// HEADER (BEM: .header)
+// ================================================================
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: $shadow-sm;
+    z-index: $z-header;
+    @include smooth-transition(box-shadow, background-color);
+    
+    &--scrolled {
+        box-shadow: $shadow-md;
+        background-color: rgba(255, 255, 255, 1);
+    }
+    
+    &__container {
+        @include flex-center(row, space-between, center);
+        padding-block: 1rem;
+    }
+}
+
+// -------------------- Logo --------------------
+.logo {
+    &__text {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: $font-weight-bold;
+        color: $color-primary;
+    }
+    
+    &__accent {
+        color: $color-accent;
+    }
+}
+
+// -------------------- Navigation --------------------
+.nav {
+    position: relative;
+    
+    &__list {
+        display: flex;
+        gap: $spacing-md;
+        
+        @include respond-to(tablet) {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            flex-direction: column;
+            width: 200px;
+            padding: $spacing-sm;
+            margin-top: 1rem;
+            background-color: $color-bg-primary;
+            border-radius: $border-radius-md;
+            box-shadow: $shadow-lg;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+            @include smooth-transition(opacity, transform);
+        }
+        
+        &--active {
+            @include respond-to(tablet) {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+        }
+    }
+    
+    &__link {
+        position: relative;
+        padding: calc($spacing-xs / 2) 0;
+        font-weight: $font-weight-medium;
+        color: $color-text-primary;
+        @include smooth-transition(color);
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, $color-primary, $color-accent);
+            transition: width $transition-base;
+        }
+        
+        &:hover {
+            color: $color-primary;
+            
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// -------------------- Menu Toggle (Mobile) --------------------
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: calc($spacing-xs / 2);
+    padding: $spacing-xs;
+    background: none;
+    border: none;
+    
+    @include respond-to(tablet) {
+        display: flex;
+    }
+    
+    &__bar {
+        width: 25px;
+        height: 3px;
+        background-color: $color-primary;
+        border-radius: 2px;
+        @include smooth-transition(transform, opacity);
+    }
+    
+    &--active {
+        .menu-toggle__bar {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
+
+// ================================================================
+// HERO (BEM: .hero)
+// ================================================================
+.hero {
+    position: relative;
+    @include flex-center(row, center, center);
+    height: 100vh;
+    min-height: 600px;
+    margin-top: 70px;
+    background: 
+        linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: $color-bg-primary;
+    text-align: center;
+    
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(236, 72, 153, 0.6) 100%);
+        z-index: $z-content;
+    }
+    
+    &__content {
+        position: relative;
+        z-index: $z-overlay;
+        max-width: 800px;
+        padding-inline: $spacing-md;
+    }
+    
+    &__title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: $font-weight-bold;
+        line-height: $line-height-tight;
+        margin-bottom: $spacing-sm;
+    }
+    
+    &__subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        font-weight: $font-weight-light;
+        margin-bottom: $spacing-md;
+    }
+    
+    // Responsividade
+    @include respond-to(tablet) {
+        height: 80vh;
+        min-height: 500px;
+    }
+    
+    @include respond-to(mobile) {
+        height: 70vh;
+        min-height: 450px;
+        
+        .hero__content {
+            padding-inline: $spacing-sm;
+        }
+    }
+}
+
+// ================================================================
+// ABOUT (BEM: .about)
+// ================================================================
+.about {
+    @include section-padding;
+    background-color: $color-bg-primary;
+    
+    &__content {
+        display: flex;
+        gap: $spacing-lg;
+        align-items: center;
+        margin-top: $spacing-md;
+        
+        @include respond-to(tablet) {
+            flex-direction: column;
+            gap: $spacing-md;
+        }
+    }
+    
+    &__text {
+        flex: 1;
+    }
+    
+    &__heading {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-sm;
+        color: $color-primary;
+    }
+    
+    &__paragraph {
+        margin-bottom: $spacing-sm;
+        color: $color-text-secondary;
+        line-height: $line-height-relaxed;
+    }
+    
+    &__image-wrapper {
+        flex: 1;
+    }
+    
+    &__image {
+        width: 100%;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-lg;
+        object-fit: cover;
+    }
+}
+
+// ================================================================
+// SERVICES (BEM: .services)
+// ================================================================
+.services {
+    @include section-padding;
+    background-color: $color-bg-secondary;
+    
+    &__grid {
+        @include responsive-grid(300px, $spacing-md);
+        margin-top: $spacing-md;
+        
+        @include respond-to(tablet) {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        @include respond-to(mobile) {
+            grid-template-columns: 1fr;
+        }
+        
+        @include respond-to(desktop-xl) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+// ================================================================
+// TESTIMONIALS (BEM: .testimonials)
+// ================================================================
+.testimonials {
+    @include section-padding;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: $color-bg-primary;
+    
+    &__grid {
+        @include responsive-grid(280px, $spacing-md);
+        margin-top: $spacing-md;
+        
+        @include respond-to(tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// ================================================================
+// CONTACT (BEM: .contact)
+// ================================================================
+.contact {
+    @include section-padding;
+    background-color: $color-bg-primary;
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: $spacing-lg;
+        margin-top: $spacing-md;
+        
+        @include respond-to(tablet) {
+            grid-template-columns: 1fr;
+            gap: $spacing-md;
+        }
+    }
+    
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+    }
+}
+
+// ================================================================
+// FOOTER (BEM: .footer)
+// ================================================================
+.footer {
+    padding: $spacing-md 0;
+    background-color: $color-bg-dark;
+    color: $color-bg-primary;
+    text-align: center;
+    
+    &__container {
+        @include flex-center(column, center, center);
+        gap: $spacing-sm;
+    }
+    
+    &__social {
+        display: flex;
+        gap: $spacing-sm;
+    }
+    
+    &__social-link {
+        padding: calc($spacing-xs / 2) $spacing-sm;
+        color: $color-bg-primary;
+        border-radius: $border-radius-sm;
+        transition: background-color $transition-base;
+        
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+}

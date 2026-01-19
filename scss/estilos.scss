@@ -1,0 +1,26 @@
+// ================================================================
+// AGÊNCIA CRIATIVA WEB - ARQUIVO PRINCIPAL SASS
+// ================================================================
+// 
+// Estrutura Modular com SASS:
+// - Uso de @use para importação de módulos
+// - Partials organizados por função
+// - Variáveis, Mixins e Aninhamento
+// - Metodologia BEM para nomenclatura
+// 
+// Autor: Equipe de Desenvolvimento
+// Data: Janeiro 2026
+// ================================================================
+
+// -------------------- Importações --------------------
+// Ordem de importação: Variáveis > Mixins > Base > Componentes > Layout
+
+@use 'variaveis';
+@use 'mixins';
+@use 'base';
+@use 'componentes';
+@use 'layout';
+
+// ================================================================
+// Arquivo compilado para: css/estilos.css
+// ================================================================

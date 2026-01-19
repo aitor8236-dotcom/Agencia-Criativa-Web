@@ -1,0 +1,212 @@
+// ================================================================
+// COMPONENTES - BOTÕES, CARDS, FORMS
+// ================================================================
+
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// ================================================================
+// BOTÃO (BEM: .btn)
+// ================================================================
+.btn {
+    @include button-base;
+    font-size: 1.1rem;
+    
+    &--primary {
+        background: linear-gradient(135deg, $color-accent, $color-secondary);
+        color: $color-bg-primary;
+        box-shadow: $shadow-md;
+        
+        &:hover {
+            box-shadow: $shadow-lg;
+        }
+    }
+    
+    &--full-width {
+        width: 100%;
+    }
+    
+    // Responsividade
+    @include respond-to(mobile) {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+// ================================================================
+// CARD (BEM: .card)
+// ================================================================
+.card {
+    @include card-base;
+    
+    &__icon {
+        font-size: 3rem;
+        margin-bottom: $spacing-sm;
+    }
+    
+    &__title {
+        font-size: 1.5rem;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-sm;
+        color: $color-primary;
+    }
+    
+    &__description {
+        color: $color-text-secondary;
+        line-height: $line-height-base;
+    }
+    
+    &--centered {
+        text-align: center;
+    }
+    
+    &--glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+    }
+}
+
+// ================================================================
+// FORMULÁRIO (BEM: .form)
+// ================================================================
+.form {
+    background: $color-bg-secondary;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    
+    &__group {
+        margin-bottom: $spacing-sm;
+    }
+    
+    &__label {
+        display: block;
+        margin-bottom: calc($spacing-xs / 2);
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+    }
+    
+    &__input,
+    &__textarea {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        border: 2px solid #e5e7eb;
+        border-radius: $border-radius-sm;
+        @include smooth-transition(border-color, box-shadow);
+        
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+            box-shadow: $shadow-focus;
+        }
+        
+        &::placeholder {
+            color: $color-text-secondary;
+            opacity: 0.7;
+        }
+    }
+    
+    &__textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
+
+// ================================================================
+// TESTIMONIAL (BEM: .testimonial)
+// ================================================================
+.testimonial {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    @include smooth-transition(transform, background);
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+    }
+    
+    &__quote {
+        font-size: 4rem;
+        line-height: 0.8;
+        opacity: 0.3;
+        font-family: serif;
+    }
+    
+    &__text {
+        margin-block: $spacing-sm;
+        font-style: italic;
+        line-height: $line-height-relaxed;
+    }
+    
+    &__author {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-top: $spacing-md;
+        
+        @include respond-to(mobile) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    &__avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: $border-radius-full;
+        border: 3px solid $color-bg-primary;
+    }
+    
+    &__author-name {
+        font-size: 1.1rem;
+        font-weight: $font-weight-medium;
+        margin-bottom: 0.2rem;
+    }
+    
+    &__author-role {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+}
+
+// ================================================================
+// CONTACT ITEM (BEM: .contact-item)
+// ================================================================
+.contact-item {
+    display: flex;
+    gap: $spacing-sm;
+    align-items: flex-start;
+    
+    &__icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+    
+    &__title {
+        font-size: 1.2rem;
+        font-weight: $font-weight-semibold;
+        margin-bottom: calc($spacing-xs / 2);
+        color: $color-primary;
+    }
+    
+    &__text {
+        color: $color-text-secondary;
+        line-height: $line-height-base;
+    }
+    
+    @include respond-to(mobile) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
